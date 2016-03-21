@@ -44,6 +44,6 @@
     "url": "https://github.com/RoanixS2k12/es6-library.git"
   },
   "czConfig" : {
-    "path" : "node_modules/cs-conventional-changelog"
+    "path" : "node_modules/cz-conventional-changelog"
   }
 }
