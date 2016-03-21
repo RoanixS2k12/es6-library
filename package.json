@@ -24,7 +24,7 @@
   "author": "Joani COUMA",
   "license": "ISC",
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.6.5",
     "babel-core": "^6.7.2",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.4",
@@ -52,7 +52,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:ci && npm run check-coverage"
+      "pre-commit": "npm run test:cov && npm run check-coverage"
     }
   }
 }
