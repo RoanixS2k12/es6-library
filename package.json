@@ -1,13 +1,13 @@
 {
   "name": "xxi-svg-map",
-  "version": "0.0.1",
   "description": "Simple SVG wrapper allowing to create a map from geojson data",
   "main": "src/index.js",
   "scripts": {
     "build": "WEBPACK_ENV=build webpack",
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
     "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
-    "test:cov": "babel-node ./node_modules/istanbul/lib/cli cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register --colors -w --recursive "
+    "test:cov": "babel-node ./node_modules/istanbul/lib/cli cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register --colors -w --recursive ",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "directories": {
     "test": "test"
@@ -32,6 +32,11 @@
     "eslint-loader": "^1.3.0",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.4.5",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "semantic-release": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RoanixS2k12/es6-library.git"
   }
 }
