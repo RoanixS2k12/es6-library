@@ -2,6 +2,7 @@
   "name": "xxi-svg-map",
   "description": "Simple SVG wrapper allowing to create a map from geojson data",
   "main": "src/index.js",
+  "version" : "0.0.0-semantically-release",
   "scripts": {
     "build": "WEBPACK_ENV=build webpack",
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",

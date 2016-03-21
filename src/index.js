@@ -1,8 +1,6 @@
 
 export default class SVGMap {
 
-
-
   constructor() {
     this._name = 'SVGMap'
   }
