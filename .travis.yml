@@ -14,7 +14,7 @@ before_script:
 after_success:
   - npm run semantic-release
 script:
-  - npm run test
+  - npm run test:ci
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"

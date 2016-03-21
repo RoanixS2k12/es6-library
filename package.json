@@ -7,6 +7,7 @@
     "build": "WEBPACK_ENV=build webpack",
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
     "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
+    "test:ci" : "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
     "test:cov": "babel-node ./node_modules/istanbul/lib/cli cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register --colors -w --recursive ",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit" : "git-cz"
