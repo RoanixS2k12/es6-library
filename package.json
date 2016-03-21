@@ -7,10 +7,10 @@
     "build": "WEBPACK_ENV=build webpack",
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
     "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
-    "test:ci" : "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
+    "test:ci": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
     "test:cov": "babel-node ./node_modules/istanbul/lib/cli cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register --colors -w --recursive ",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "commit" : "git-cz"
+    "commit": "git-cz"
   },
   "directories": {
     "test": "test"
@@ -35,6 +35,7 @@
     "cz-conventional-changelog": "^1.1.5",
     "eslint": "^2.4.0",
     "eslint-loader": "^1.3.0",
+    "ghooks": "^1.0.3",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.4.5",
     "semantic-release": "^4.3.5",
@@ -44,7 +45,12 @@
     "type": "git",
     "url": "https://github.com/RoanixS2k12/es6-library.git"
   },
-  "czConfig" : {
-    "path" : "node_modules/cz-conventional-changelog"
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "config" : {
+    "ghooks" : {
+      "pre-commit" : "npm run test:ci"
+    }
   }
 }
