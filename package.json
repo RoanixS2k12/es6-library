@@ -52,7 +52,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:cov && npm run check-coverage"
+      "pre-commit": "npm run test:cov"
     }
   }
 }

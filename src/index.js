@@ -3,7 +3,7 @@ export default class SVGMap {
 
   constructor(selector, { width, height }) {
 
-    if(selector === '') {
+    if (selector === '') {
       throw new Error('There has to be a selector');
     }
 
@@ -17,6 +17,6 @@ export default class SVGMap {
   get width() { return this._width; }
   get height() { return this._height; }
   get selector() { return this._selector; }
-  get test() { return 'test' }
+  get test() { return 'test'; }
 
 }

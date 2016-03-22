@@ -38,6 +38,7 @@ describe('Given an instance of my library', function () {
   });
 
   describe('when I need to know what it looks like', function () {
+
     it('should return its width', function() {
       expect(map.width).to.be.equal(100);
     });

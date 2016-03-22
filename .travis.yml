@@ -14,5 +14,7 @@ after_success:
 script:
   - npm run test:cov
 branches:
+  only:
+    - master
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
