@@ -4,47 +4,50 @@ var path = require('path');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var env = process.env.WEBPACK_ENV;
 
-var libraryName = "xxi-svg-map";
+var libraryName = 'xxi-svg-map';
 var plugins = [], outputFile;
 
-if(env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize : true}));
+var config;
+
+if (env === 'build') {
+  plugins.push(new UglifyJsPlugin({ minimize: true}));
   outputFile = libraryName + '.min.js';
 } else {
-  outputFile = libraryName + ".js";
+  outputFile = libraryName + '.js';
 }
 
-
-
-var config = {
-  entry : __dirname + "/src/index.js",
-  devtool : "source-map",
-  output : {
-    path : __dirname + "/lib",
+config = {
+  entry: __dirname + '/src/index.js',
+  devtool: 'source-map',
+  output: {
+    path: __dirname + '/lib',
     filename: outputFile,
-    library : libraryName,
+    library: libraryName,
     libraryTarget: 'umd',
-    umdNamedDefine : true
+    umdNamedDefine: true
   },
-  module : {
-    loaders : [
+  module: {
+    loaders: [
       {
         test: /(\.jsx|\.js)$/,
         loader: 'babel',
-        exclude : /(node_modules|bower_components)/
+        exclude: /(node_modules|bower_components)/
       },
       {
         test: /(\.jsx|\.js)$/,
-        loader : "eslint-loader",
-        exclude : /node_modules/
+        loader: 'eslint-loader',
+        exclude: /node_modules/
       }
     ]
   },
-  resolve : {
-    root : path.resolve('./src'),
-    extensions : ['', '.js']
+  resolve: {
+    root: path.resolve('./src'),
+    extensions: ['', '.js']
   },
-  plugins : plugins
-}
+  plugins: plugins,
+  node: {
+    fs: 'empty'
+  }
+};
 
 module.exports = config;
