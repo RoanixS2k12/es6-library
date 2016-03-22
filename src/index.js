@@ -43,10 +43,10 @@ export default class SVGMap {
     this._file = file;
     this._width = width;
     this._height = height;
-    this._projection = projection;
+    this._projectionFunction = projection;
 
     // Creating the base of the projection
-    this._projection = this.projection
+    this._projection = this._projectionFunction
                             .center(center)
                             .scale(scale);
 
