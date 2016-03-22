@@ -44,10 +44,7 @@ config = {
     root: path.resolve('./src'),
     extensions: ['', '.js']
   },
-  plugins: plugins,
-  node: {
-    fs: 'empty'
-  }
+  plugins: plugins
 };
 
 module.exports = config;

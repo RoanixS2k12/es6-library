@@ -1,5 +1,4 @@
 import d3 from 'd3';
-require('d3-geo-projection')(d3);
 import topojson from 'topojson';
 
 function setupMap(object, width, height) {
@@ -25,6 +24,7 @@ export default class SVGMap {
         height,
         scale = 135,
         center = [70, -35],
+        projection,
         ...options}) {
 
     if (object === undefined || object === '') {
@@ -35,13 +35,18 @@ export default class SVGMap {
       throw new Error('You did not specified a data file');
     }
 
+    if (projection === undefined || projection === '') {
+      throw new Error('You did not specified a projection for d3 to use');
+    }
+
     this._object = object;
     this._file = file;
     this._width = width;
     this._height = height;
+    this._projection = projection;
 
     // Creating the base of the projection
-    this._projection = d3.geo.bromley()
+    this._projection = this.projection
                             .center(center)
                             .scale(scale);
 

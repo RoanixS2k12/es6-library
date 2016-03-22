@@ -29,7 +29,8 @@ describe('Given an instance of an SVGMAp', function () {
     map = new SVGMap(d3elem, {
       width: 100,
       height: 200,
-      file: api
+      file: api,
+      projection: d3.geo.mercator()
     });
 
   });
@@ -52,7 +53,8 @@ describe('Given an instance of an SVGMAp', function () {
       var newMap = new SVGMap('#selector', {
         width: 100,
         height: 200,
-        file: api
+        file: api,
+        projection: d3.geo.mercator()
       });
 
       expect(newMap).to.not.be.null;
@@ -71,6 +73,19 @@ describe('Given an instance of an SVGMAp', function () {
         map = new SVGMap('#selector', {
           width: 100,
           height: 200
+        });
+      };
+
+      expect(fn).to.throw(Error);
+
+    });
+
+    it('should throw if no projection are specified', function () {
+      var fn = function () {
+        map = new SVGMap('#selector', {
+          width: 100,
+          height: 200,
+          file: api
         });
       };
 
