@@ -16,8 +16,11 @@
     "navigator": false,
     "unescape": false,
     "window": false,
+    "beforeEach" : true,
+    "afterEach": true,
     "describe": true,
     "before": true,
+    "after": true,
     "it": true,
     "expect": true,
     "sinon": true
