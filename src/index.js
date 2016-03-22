@@ -89,5 +89,6 @@ export default class SVGMap {
   get object() { return this._object; }
   get projection() { return this._projection; }
   get file() { return this._file; }
+  get path() { return this._path; }
 
 }
