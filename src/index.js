@@ -43,6 +43,7 @@ export default class SVGMap {
     this._file = file;
     this._width = width;
     this._height = height;
+    this._center = center;
     this._projectionFunction = projection;
 
     // Creating the base of the projection
@@ -90,5 +91,6 @@ export default class SVGMap {
   get projection() { return this._projection; }
   get file() { return this._file; }
   get path() { return this._path; }
+  get center() { return this._center; }
 
 }

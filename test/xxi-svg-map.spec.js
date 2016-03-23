@@ -113,6 +113,11 @@ describe('Given an instance of an SVGMAp', function () {
       expect(map.projection).to.not.be.null;
     });
 
+    it('should return its center', function () {
+      expect(map.center).to.not.be.null;
+    });
+
+
   });
 
   describe('when I initialize it', function () {
