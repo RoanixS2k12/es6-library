@@ -93,4 +93,6 @@ export default class SVGMap {
   get path() { return this._path; }
   get center() { return this._center; }
 
+  get test() { return 'Hello world'; }
+
 }
